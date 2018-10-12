@@ -40,7 +40,7 @@ export class StreamsComponent implements OnInit {
   }
 
   nextPage() {
-    if (this.offset <= this.totalPages) {
+    if (this.offset + 1 <= this.totalPages) {
       this.offset += 1;
       this.getStreams();
     }
