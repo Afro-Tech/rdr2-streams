@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div *ngIf="!pageReady" class="loading"></div>
+
+  <div *ngIf="pageReady" class="homeContent">
+    <div class="featuredStream">
+      <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(featuredStreamUrl)' height="380" width="620" frameborder="0"
+        scrolling="no" allowfullscreen="true">
+      </iframe>
+    </div>
+
+    <div class="siteDescription">
+      <h5>Red Dead Redemption 2 Live Stream</h5>
+      <p>
+        Watching RDR2 Live streams is a fun and exciting way to stay plugged in without having to play on your own!
+        Watch your favorite RDR2 streams right here in one place. Check out our full selection of streamers below!
+      </p>
+
+      <h5>Top Live RDR2 Streams</h5>
+    </div>
+
+  </div>
+
+  <div class="popularStreams">
+    <div class="streamItem" *ngFor="let stream of streams" (click)="viewStream(stream.channel.display_name)">
+      <div>
+        <img src="{{stream.preview.medium}}" alt="">
+        <p>{{stream.channel.status}}</p>
+        <p>{{stream.viewers}} viewers</p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>

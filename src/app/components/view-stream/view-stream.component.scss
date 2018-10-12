@@ -1,0 +1,32 @@
+.wrapper {
+    padding: 30px;
+    text-align: center;
+
+    .loading {
+        display: inline-block;   
+    }
+
+    .streamContent {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 1em;
+
+        .videoDetails {
+            grid-column: 2;
+    
+            p {
+                padding-top: 10px;
+            }
+        }
+    
+        .video {
+            grid-column: 2;
+        }
+
+        .chat {
+            grid-column: 2;
+        }
+    }
+
+
+}

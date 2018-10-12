@@ -1,0 +1,72 @@
+.wrapper {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+
+    div {
+        text-align: center;
+    }
+
+    .noStreams {
+        grid-column: 2;
+        padding: 80px;
+    }
+
+    .streamItem {
+        cursor: pointer;
+    }
+
+    .pagination {
+        box-sizing: border-box;
+        appearance: none;
+        background-color: transparent;
+        border-radius: 0.6em;
+        cursor: pointer;
+        display: flex;
+        align-self: center;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        margin: 20px;
+        padding: 1.2em 2.8em;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-color: #AD0414;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #AD0414 inset, 0 0 0 0 #AD0414;
+        transition: all 150ms ease-in-out;
+      
+        &:hover {
+          background: #1B1D22;
+          color: #AD0414;
+          outline: 0;
+          box-shadow: 0 0 10px 0 #AD0414 inset, 0 0 10px 4px #AD0414;
+        }
+      }
+
+      .previous {
+          grid-column: 1;
+      }
+
+      .next {
+          grid-column: 3;
+      }
+
+      .disabled {
+        box-shadow: 0 0 40px 40px #363636 inset, 0 0 0 0 #363636;
+        border-style: none;
+        transition: unset;
+        border-color: #363636;
+        &:hover {
+            cursor: not-allowed;
+            color: #fff;
+            outline: unset !important;
+            box-shadow: 0 0 40px 40px #363636 inset, 0 0 0 0 #363636;
+
+          }
+      }
+}

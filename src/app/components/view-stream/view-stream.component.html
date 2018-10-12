@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div *ngIf="!stream" class="loading"></div>
+
+  <div *ngIf="stream" class="streamContent">
+    <div class="videoDetails">
+      <h5>{{stream.channel.status}}</h5>
+      <p>Viewers: {{stream.viewers | number: '2.'}}</p>
+      <p>Followers: {{stream.channel.followers | number: '2.'}}</p>
+    </div>
+
+    <div class="video">
+      <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(videoUrl)' height="380" width="620" frameborder="0"
+        scrolling="no" allowfullscreen="true">
+      </iframe>
+    </div>
+
+    <div class="chat">
+      <iframe frameborder="0" scrolling="no" id="{{stream.channel.display_name}}" [src]='sanitizer.bypassSecurityTrustResourceUrl(chatUrl)'
+        height="400" width="620">
+      </iframe>
+    </div>
+  </div>
+
+</div>

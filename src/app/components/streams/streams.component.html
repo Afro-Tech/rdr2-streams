@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div *ngIf="!streams" class="loading"></div>
+  <div class="noStreams" *ngIf="streams && streams.length < 1">No Streams Available</div>
+  <div *ngFor="let stream of streams" class="streamItem" (click)="viewStream(stream.channel.display_name)">
+    <div *ngIf="streams">
+      <img src="{{stream.preview.medium}}" alt="">
+      <p>{{stream.channel.status}}</p>
+      <p>{{stream.viewers}} viewers</p>
+    </div>
+  </div>
+  <button [ngClass]="offset === 0 ? 'disabled' : ''" (click)="previousPage()" class="previous pagination">Previous</button>
+  <button [ngClass]="offset >= totalPages ? 'disabled' : ''" (click)="nextPage()" class="next pagination">Next</button>
+</div>

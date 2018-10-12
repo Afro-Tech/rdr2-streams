@@ -1,0 +1,25 @@
+.page {
+	display: grid;
+	grid-template-rows: 340px 1fr 30px;
+	grid-template-columns: 1fr 5fr 1fr;
+    // height: 100vh;
+
+    .header {
+        grid-column: 2;
+    }
+
+    .body {
+        grid-column: 2;
+        background: #eee;
+    }
+
+    .footer {
+        grid-column: 2;
+        background: #AD0414;
+
+        p {
+            text-align: center;
+            line-height: 30px;
+        }
+    }
+}
