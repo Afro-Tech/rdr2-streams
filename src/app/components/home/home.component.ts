@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   streams;
   featuredStreamUrl;
   pageReady = false;
+  noStreamsAvailable = false;
 
   constructor(
     private serviceService: ServiceService,
@@ -25,23 +26,26 @@ export class HomeComponent implements OnInit {
   }
 
   getStreams() {
-    this.pageReady = false;
     this.serviceService.getStreams(0, 6).subscribe((data: any) => {
       this.streams = data.streams;
 
+      if (this.streams.length < 1) {
+        this.noStreamsAvailable = true;
+      } else {
+        let mostViewers = this.streams[0].viewers;
+        let featuredStream = this.streams[0];
 
-      let mostViewers = this.streams[0].viewers;
-      let featuredStream = this.streams[0];
-
-      for (let i = 0; i < this.streams.length; i++) {
-        if (this.streams[i].viewers > mostViewers) {
-          mostViewers = this.streams[i].viewers;
-          featuredStream = this.streams[i];
+        for (let i = 0; i < this.streams.length; i++) {
+          if (this.streams[i].viewers > mostViewers) {
+            mostViewers = this.streams[i].viewers;
+            featuredStream = this.streams[i];
+          }
         }
+
+        this.featuredStreamUrl = 'https://player.twitch.tv/?channel=' + featuredStream.channel.display_name;
+        this.pageReady = true;
       }
 
-      this.featuredStreamUrl = 'https://player.twitch.tv/?channel=' + featuredStream.channel.display_name;
-      this.pageReady = true;
     });
   }
 

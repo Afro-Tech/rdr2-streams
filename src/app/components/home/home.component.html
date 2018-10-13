@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <div *ngIf="!pageReady" class="loading"></div>
-
+  <div *ngIf="!pageReady && !noStreamsAvailable" class="loading"></div>
+  <div *ngIf="noStreamsAvailable">No streams available, please try again later.</div>
   <div *ngIf="pageReady" class="homeContent">
     <div class="featuredStream">
       <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(featuredStreamUrl)' height="380" width="620" frameborder="0"
