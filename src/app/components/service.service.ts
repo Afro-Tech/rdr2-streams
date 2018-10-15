@@ -11,7 +11,7 @@ export class ServiceService {
 
   getStreams(offset, limit) {
     const headers = new HttpHeaders({ 'Client-ID': 'c0bpyzcfuzsfu5ukbdwswz8sblhu9v' });
-    return this.http.get('https://api.twitch.tv/kraken/streams/?language=en&limit='
+    return this.http.get('https://api.twitch.tv/kraken/streams/?language=en&game=Red Dead Redemption 2&limit='
     + limit + '&offset=' + offset, { headers });
   }
 
