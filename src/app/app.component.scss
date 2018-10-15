@@ -1,8 +1,12 @@
 .page {
 	display: grid;
-	grid-template-rows: 340px 1fr 30px;
+	grid-template-rows: max-content(290px) 1fr 30px;
 	grid-template-columns: 1fr 5fr 1fr;
-    // height: 100vh;
+    min-height: 100vh;
+
+    @media only screen and (max-width: 850px) {
+        grid-template-columns: 0fr 7fr 0fr;
+    }
 
     .header {
         grid-column: 2;
@@ -10,7 +14,8 @@
 
     .body {
         grid-column: 2;
-        background: #eee;
+        min-height: 100%;
+        background:#1B1D22;
     }
 
     .footer {

@@ -1,16 +1,16 @@
 .wrapper {
     img {
-        display: block;
         margin: 0 auto;
+        max-width: 100%; 
+        display:block; 
         max-height: 290px;
-        max-width: auto;
     }
 
     .navBar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 5fr;
-        align-items: center;
+
+        display: flex;
         justify-content: start;
+        align-items: center;
         border-top: 1px solid #363636;
         border-bottom: 1px solid #363636;
         height: 48px;
@@ -18,10 +18,11 @@
         a {
             text-align: center;
             line-height: 48px;
+            padding-left: 20px;
+            padding-right: 20px;
             color: #eee;
 
             &:hover {
-                // color: #000;
                 background: #AD0414;
                 transition: .3s ease-in-out;
             }
