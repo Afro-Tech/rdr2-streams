@@ -5,7 +5,7 @@
   <div class="streamsContent">
     <div *ngFor="let stream of streams" class="streamItem" (click)="viewStream(stream.channel.display_name)">
       <div *ngIf="streams">
-        <img src="{{stream.preview.medium}}" alt="">
+        <img src="{{stream.preview.medium}}" alt="Red Dead Redemption 2 Live Streams Preview">
         <p>{{stream.channel.status}}</p>
         <p>{{stream.viewers}} viewers</p>
       </div>

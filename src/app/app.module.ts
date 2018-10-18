@@ -9,11 +9,13 @@ import { HomeComponent } from './components/home/home.component';
 import { StreamsComponent } from './components/streams/streams.component';
 import { ServiceService } from './components/service.service';
 import { ViewStreamComponent } from './components/view-stream/view-stream.component';
+import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'streams', component: StreamsComponent },
   { path: 'stream/:id', component: ViewStreamComponent },
+  { path: 'about', component: AboutComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     StreamsComponent,
-    ViewStreamComponent
+    ViewStreamComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
